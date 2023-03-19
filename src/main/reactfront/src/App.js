@@ -1,32 +1,172 @@
-import './App.css';
+// @mui material components
+import Container from "@mui/material/Container";
+import Grid from "@mui/material/Grid";
+import Link from "@mui/material/Link";
+import Stack from "@mui/material/Stack";
 
-//0. React 엔진 - 데이터변경감지해서 UI그려주는
-//1. 실행방식(index.html) -SPA
-//2. JSX문법ß
-//3. 바벨(ES5문법)
-//(1) return시 하나의 태그로 감싸야함
-//(2) 변수선언은 let또는 const로만 사용
-//(3) if문 사용불가 - 삼항연산자 사용 (조건 ? 참 : 거짓)
-//(4) 조건부 렌더링 (조건 && 참)
-//(5) css디자인
- // - 내부에 적는 방법
-// - 외부 파일에 적는 방법
-// - 라이브러리 사용(부트스트랩, componet-styled
-let a = 10;
-const b = 20;
+// Material Kit 2 React components
+import MKBox from "components/MKBox";
+import MKButton from "components/MKButton";
+import MKTypography from "components/MKTypography";
 
-function App() {
-  let c;
+// Images
+import bgImage from "assets/images/bg-coworking.jpeg";
 
-  const myStyle = {
-  color: "red",
-  };
+function HeaderOne() {
   return (
-      <div>
-        <div style={myStyle}>안녕{a === 10 ? "10입니다" : "10이 아닙니다."}</div>
-        <h1 className={"box-style"}>해당태그{b === 20 && "20입니다"}</h1>
-      </div>
+      <MKBox component="header" position="relative">
+        <MKBox component="nav" position="absolute" top="0.5rem" width="100%">
+          <Container>
+            <Grid container flexDirection="row" alignItems="center">
+              <MKTypography
+                  component={Link}
+                  href="#"
+                  variant="button"
+                  color="white"
+                  fontWeight="regular"
+                  py={0.8125}
+                  mr={2}
+              >
+                Material Design
+              </MKTypography>
+              <MKButton
+                  variant="outlined"
+                  color="white"
+                  sx={{ display: { xs: "block", lg: "none" }, ml: "auto" }}
+              >
+                <MKBox component="i" color="white" className="fas fa-bars" />
+              </MKButton>
+              <MKBox
+                  component="ul"
+                  display={{ xs: "none", lg: "flex" }}
+                  p={0}
+                  my={0}
+                  mx="auto"
+                  sx={{ listStyle: "none" }}
+              >
+                <MKBox component="li">
+                  <MKTypography
+                      component={Link}
+                      href="#"
+                      variant="button"
+                      color="white"
+                      fontWeight="regular"
+                      p={1}
+                      onClick={(e) => e.preventDefault()}
+                  >
+                    Home
+                  </MKTypography>
+                </MKBox>
+                <MKBox component="li">
+                  <MKTypography
+                      component={Link}
+                      href="#"
+                      variant="button"
+                      color="white"
+                      fontWeight="regular"
+                      p={1}
+                      onClick={(e) => e.preventDefault()}
+                  >
+                    About Us
+                  </MKTypography>
+                </MKBox>
+                <MKBox component="li">
+                  <MKTypography
+                      component={Link}
+                      href="#"
+                      variant="button"
+                      color="white"
+                      fontWeight="regular"
+                      p={1}
+                      onClick={(e) => e.preventDefault()}
+                  >
+                    Contact Us
+                  </MKTypography>
+                </MKBox>
+              </MKBox>
+              <MKBox
+                  component="ul"
+                  display={{ xs: "none", lg: "flex" }}
+                  p={0}
+                  m={0}
+                  sx={{ listStyle: "none" }}
+              >
+                <MKBox component="li">
+                  <MKTypography
+                      component={Link}
+                      href="#"
+                      variant="button"
+                      p={1}
+                      onClick={(e) => e.preventDefault()}
+                  >
+                    <MKBox component="i" color="white" className="fab fa-twitter" />
+                  </MKTypography>
+                </MKBox>
+                <MKBox component="li">
+                  <MKTypography
+                      component={Link}
+                      href="#"
+                      variant="button"
+                      p={1}
+                      onClick={(e) => e.preventDefault()}
+                  >
+                    <MKBox component="i" color="white" className="fab fa-facebook" />
+                  </MKTypography>
+                </MKBox>
+                <MKBox component="li">
+                  <MKTypography
+                      component={Link}
+                      href="#"
+                      variant="button"
+                      p={1}
+                      onClick={(e) => e.preventDefault()}
+                  >
+                    <MKBox component="i" color="white" className="fab fa-instagram" />
+                  </MKTypography>
+                </MKBox>
+              </MKBox>
+            </Grid>
+          </Container>
+        </MKBox>
+        <MKBox
+            display="flex"
+            alignItems="center"
+            minHeight="100vh"
+            sx={{
+              backgroundImage: ({ palette: { gradients }, functions: { linearGradient, rgba } }) => `${linearGradient(rgba(gradients.dark.main, 0.5), rgba(gradients.dark.state, 0.5))}, url(${bgImage})`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+            }}
+        >
+          <Container>
+            <Grid container item xs={12} md={7} lg={6} flexDirection="column" justifyContent="center">
+              <MKTypography
+                  variant="h1"
+                  color="white"
+                  mb={3}
+                  sx={({ breakpoints, typography: { size } }) => ({
+                    [breakpoints.down("md")]: {
+                      fontSize: size["3xl"],
+                    },
+                  })}
+              >
+                Material Kit
+              </MKTypography>
+              <MKTypography variant="body1" color="white" opacity={0.8} pr={6} mr={6}>
+                The time is now for it be okay to be great. People in this world shun people for being
+                nice.
+              </MKTypography>
+              <Stack direction="row" spacing={1} mt={3}>
+                <MKButton color="white">Get Started</MKButton>
+                <MKButton variant="text" color="white">
+                  Read more
+                </MKButton>
+              </Stack>
+            </Grid>
+          </Container>
+        </MKBox>
+      </MKBox>
   );
 }
 
-export default App;
+export default HeaderOne;
