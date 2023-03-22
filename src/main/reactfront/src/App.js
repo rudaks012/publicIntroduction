@@ -13,6 +13,8 @@ import MKTypography from "components/MKTypography";
 import bgImage from "assets/images/bg-coworking.jpeg";
 
 function HeaderOne() {
+  // const classes = useStyles();
+  // const [mobileOpen, setMobileOpen] = React.useState(false); --> React
   return (
       <MKBox component="header" position="relative">
         <MKBox component="nav" position="absolute" top="0.5rem" width="100%">
@@ -20,7 +22,7 @@ function HeaderOne() {
             <Grid container flexDirection="row" alignItems="center">
               <MKTypography
                   component={Link}
-                  href="#"
+                  href="#" // <-- This is the problem
                   variant="button"
                   color="white"
                   fontWeight="regular"
