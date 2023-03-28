@@ -26,6 +26,7 @@ import CssBaseline from "@mui/material/CssBaseline";
 import theme from './assets/theme';
 import PresentationLayout from './layouts/pages/presentation';
 import routes from './routes';
+import Presentation from './layouts/pages/presentation';
 
 
 export default function App() {
