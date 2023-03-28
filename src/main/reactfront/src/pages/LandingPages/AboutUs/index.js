@@ -19,7 +19,7 @@ import Grid from "@mui/material/Grid";
 import Card from "@mui/material/Card";
 
 // Material Kit 2 React components
-import MKBox from "../../../../components/MKBox";
+import MKBox from "../../../components/MKBox";
 import MKTypography from "../../../components/MKTypography";
 import MKButton from "../../../components/MKButton";
 
@@ -38,7 +38,7 @@ import routes from "../../../routes";
 import footerRoutes from "../../../footer.routes";
 
 // Images
-// import bgImage from "../../assets/images/bg-about-us.jpg";
+import bgImage from "../../../assets/images/bg-about-us.jpg";
 
 function AboutUs() {
   return (
