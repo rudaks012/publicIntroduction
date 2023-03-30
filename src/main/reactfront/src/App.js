@@ -50,6 +50,8 @@ export default function App() {
 
       return null;
     });
+  // console.log(routes);
+  //base path is /presentation
 
   return (
     <ThemeProvider theme={theme}>
